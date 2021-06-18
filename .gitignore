@@ -1,0 +1,3 @@
+data/bitcoinsv/*
+data/electrumx/*
+!.gitkeep
