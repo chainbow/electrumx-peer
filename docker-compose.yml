@@ -8,7 +8,7 @@ services:
     environment:
       - DAEMON_URL=bitcoin:password@bitcoind
       - COIN=BitcoinSV
-      - SERVICES=ssl://127.0.0.1:50002,tcp://127.0.0.1:50001,rpc://127.0.0.1:8000
+      - SERVICES=ssl://0.0.0.0:50002,tcp://0.0.0.0:50001,rpc://0.0.0.0:8000
     ports:
       - "50002:50002"
       - "50001:50001"
