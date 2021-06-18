@@ -1,0 +1,39 @@
+version: '3'
+services:
+  electrumx:
+    container_name: electrumx
+    depends_on:
+      - bitcoind
+    image: lukechilds/electrumx:latest
+    environment:
+      - DAEMON_URL=bitcoin:password@bitcoind
+      - COIN=BitcoinSV
+      - SERVICES=ssl://127.0.0.1:50002,tcp://127.0.0.1:50001,rpc://127.0.0.1:8000
+    ports:
+      - "50002:50002"
+      - "50001:50001"
+      - "50004:50004"
+    networks:
+      - electrumx-network
+    volumes:
+      - ./data/electrumx:/data
+    restart: always
+  bitcoind:
+    image: 'bitcoinsv/bitcoin-sv:latest'
+    container_name: bitcoind
+    ports:
+      # change to 18333 if running testnet
+      - '8333:8333'
+      # JSON-RPC
+      - '8332:8332'
+      # ZMQ
+      - '28332:28332'
+    networks:
+      - electrumx-network
+    volumes:
+      - ./data/bitcoinsv:/data
+      - ./bitcoin.conf:/data/bitcoin.conf
+    command: bitcoind
+    restart: always
+networks:
+  electrumx-network:
