@@ -33,7 +33,7 @@ services:
     volumes:
       - ./data/bitcoinsv:/data
       - ./bitcoin.conf:/data/bitcoin.conf
-    command: bitcoind
+    command: bitcoind -maxstackmemoryusageconsensus=20000000000 -excessiveblocksize=200000000000
     restart: always
 networks:
   electrumx-network:
