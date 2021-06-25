@@ -1,14 +1,16 @@
 version: '3'
 services:
   electrumx:
+    build:
+      context: ./
     container_name: electrumx
     depends_on:
       - bitcoind
-    image: lukechilds/electrumx:latest
+    image: chainbow/electrumx:${APP_VER}
     environment:
       - DAEMON_URL=bitcoin:password@bitcoind
       - COIN=BitcoinSV
-      - SERVICES=ssl://:50002,tcp://:50001
+      - SERVICES=ssl://0.0.0.0:50002,tcp://0.0.0.0:50001
       - REPORT_SERVICES=ssl://${DOMAIN}:50002,tcp://${DOMAIN}:50001
     ports:
       - "50002:50002"
