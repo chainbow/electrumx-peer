@@ -1,6 +1,6 @@
-# Electrumx Node
+# Electrumx Peer node
 
-Launch your electrumx node for BitcoinSV
+Launch your electrumx peer node for BitcoinSV
 
 ## Change your domain
 
