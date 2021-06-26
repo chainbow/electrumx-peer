@@ -1,6 +1,5 @@
 FROM python:3.9.5-alpine3.13
 LABEL maintainer="ChainBow Team <support@chainbow.io>"
-#inspired from "Luke Childs <lukechilds123@gmail.com>"
 
 COPY ./bin /usr/local/bin
 
