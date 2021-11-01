@@ -1,0 +1,13 @@
+# Dependency directories
+.vscode/
+design/
+docker-prod/
+docs/
+server/
+test/
+node_modules/
+playground/
+dist/
+data/
+
+README.md
