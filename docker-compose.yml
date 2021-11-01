@@ -6,7 +6,7 @@ services:
     container_name: electrumx
     depends_on:
       - bitcoind
-    image: chainbow/electrumx:${APP_VER}
+    image: baryon/electrumx:${APP_VER}
     environment:
       - DAEMON_URL=bitcoin:password@bitcoind
       - COIN=BitcoinSV

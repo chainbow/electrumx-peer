@@ -3,7 +3,7 @@ LABEL maintainer="ChainBow Team <support@chainbow.io>"
 
 COPY ./bin /usr/local/bin
 
-ARG VERSION=1.19.0
+ARG VERSION=1.20.2
 
 RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
