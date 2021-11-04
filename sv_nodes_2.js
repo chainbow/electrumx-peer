@@ -31,7 +31,7 @@ addresses.forEach(function(address) {
   const n = nodes[address];
 
   // show the address if it is a Bitcoin SV node
-  if (n.version.startsWith('/Bitcoin SV')) {
+  if (n.version.startsWith('/Bitcoin SV:1.0.')) {
     console.log(`addnode=${address}`);
   }
 });
