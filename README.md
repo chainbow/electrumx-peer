@@ -8,11 +8,11 @@ Edit ```.env``` file
 ## Run
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 Based on
-https://hub.docker.com/r/bitcoinsv/bitcoin-sv
+https://hub.docker.com/r/ruimarinho/bitcoin-core/
 
 https://github.com/kyuupichan/electrumx
 

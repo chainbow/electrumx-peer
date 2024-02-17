@@ -9,7 +9,7 @@ services:
     image: chainbow/electrumx:${APP_VER}
     environment:
       - DAEMON_URL=bitcoin:password@bitcoind
-      - COIN=BitcoinSV
+      - COIN=Bitcoin
       - SERVICES=ssl://0.0.0.0:50002,tcp://0.0.0.0:50001
       - REPORT_SERVICES=ssl://${DOMAIN}:50002,tcp://${DOMAIN}:50001
     ports:
@@ -22,7 +22,7 @@ services:
       - ./data/electrumx:/data
     restart: always
   bitcoind:
-    image: 'bitcoinsv/bitcoin-sv:latest'
+    image: 'ruimarinho/bitcoin-core:latest'
     container_name: bitcoind
     ports:
       # change to 18333 if running testnet
@@ -34,9 +34,9 @@ services:
     networks:
       - electrumx-network
     volumes:
-      - ./data/bitcoinsv:/data
+      - ./data/bitcoin:/data
       - ./bitcoin.conf:/data/bitcoin.conf
-    command: bitcoind -maxstackmemoryusageconsensus=20000000000 -excessiveblocksize=200000000000
+    command: bitcoind 
     restart: always
 networks:
   electrumx-network:
