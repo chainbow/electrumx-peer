@@ -8,6 +8,7 @@ services:
       - bitcoind
     image: chainbow/electrumx:${APP_VER}
     environment:
+      - net=host
       - DAEMON_URL=bitcoin:password@bitcoind
       - COIN=Bitcoin
       - SERVICES=ssl://0.0.0.0:50002,tcp://0.0.0.0:50001
@@ -34,8 +35,8 @@ services:
     networks:
       - electrumx-network
     volumes:
-      - ./data/bitcoin:/data
-      - ./bitcoin.conf:/data/bitcoin.conf
+      - ./data/bitcoin:/home/bitcoin/.bitcoin
+      - ./bitcoin.conf:/home/bitcoin/.bitcoin/bitcoin.conf
     command: bitcoind 
     restart: always
 networks:

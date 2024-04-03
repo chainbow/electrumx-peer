@@ -12,6 +12,7 @@ docker compose up -d
 ```
 
 Based on
+https://github.com/ruimarinho/docker-bitcoin-core
 https://hub.docker.com/r/ruimarinho/bitcoin-core/
 
 https://github.com/kyuupichan/electrumx
