@@ -42,16 +42,14 @@ VOLUME ["/data"]
 ENV HOME=/data
 ENV DB_DIRECTORY=/data
 ENV SERVICES=tcp://:50001,ssl://:50002,wss://:50004,rpc://0.0.0.0:8000
-ENV SSL_CERTFILE=/root/electrumdb/server.crt
-ENV SSL_KEYFILE=/root/electrumdb/server.key
+ENV SSL_CERTFILE=${DB_DIRECTORY}/electrumdb/server.crt
+ENV SSL_KEYFILE=${DB_DIRECTORY}/electrumdb/server.key
 ENV ALLOW_ROOT=true
 ENV CACHE_MB=10000
 ENV MAX_SESSIONS=10000
 ENV MAX_SEND=10000000
 ENV MAX_RECV=10000000
 ENV HOST=""
-
-USER 65534
 
 WORKDIR /data
 
