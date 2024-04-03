@@ -3,6 +3,8 @@ ARG VERSION=master
 FROM python:3.9.16-slim-bullseye
 LABEL version="1.2.0"
 
+ENV COIN=Bitcoin
+
 ARG VERSION
 
 COPY ./bin /usr/local/bin

@@ -8,8 +8,8 @@ services:
       - bitcoind
     image: chainbow/electrumx:${APP_VER}
     environment:
-      - net=host
-      - DAEMON_URL=bitcoin:password@bitcoind
+      - DAEMON_URL=bitcoin:password@bitcoind:8332
+      - NET=mainnet
       - COIN=Bitcoin
       - SERVICES=ssl://0.0.0.0:50002,tcp://0.0.0.0:50001
       - REPORT_SERVICES=ssl://${DOMAIN}:50002,tcp://${DOMAIN}:50001
