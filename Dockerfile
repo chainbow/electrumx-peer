@@ -53,7 +53,6 @@ ENV HOST=""
 
 USER 65534
 
-RUN mkdir /data/electrumdb
 WORKDIR /data
 
 EXPOSE 50001 50002 50004 8000
