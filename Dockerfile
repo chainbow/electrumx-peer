@@ -23,7 +23,7 @@ RUN chmod a+x /usr/local/bin/* && \
     librocksdb-dev \
     && pip install uvloop \
     && rm -rf /var/lib/apt/lists/* \
-    && git clone https://github.com/kyuupichan/electrumx.git \
+    && git clone https://github.com/spesmilo/electrumx.git \
     && cd electrumx \
     && git checkout ${VERSION} \
     && pip install -r requirements.txt \
