@@ -8,17 +8,16 @@ services:
       - bitcoind
     image: chainbow/electrumx:${APP_VER}
     environment:
-      - DAEMON_URL=bitcoin:password@bitcoind:8332
-      - NET=mainnet
+      - DAEMON_URL=bitcoin:password@bitcoind:18332
+      - NET=testnet
       - COIN=Bitcoin
-      - SERVICES=ssl://0.0.0.0:50002,tcp://0.0.0.0:50001
-      - REPORT_SERVICES=ssl://${DOMAIN}:50002,tcp://${DOMAIN}:50001
+      - SERVICES=ssl://0.0.0.0:51002,tcp://0.0.0.0:51001
+      - REPORT_SERVICES=ssl://${DOMAIN}:51002,tcp://${DOMAIN}:51001
     ports:
-      - "50002:50002"
-      - "50001:50001"
-      - "50004:50004"
+      - "51002:51002"
+      - "51001:51001"
     networks:
-      - electrumx-network
+      - electrumx-testnet-network
     volumes:
       - ./data/electrumx:/data
     restart: always
@@ -27,17 +26,15 @@ services:
     container_name: bitcoind
     ports:
       # change to 18333 if running testnet
-      - '8333:8333'
+      - '18333:18333'
       # JSON-RPC
-      - '8332:8332'
-      # ZMQ
-      - '28332:28332'
+      - '18332:18332'
     networks:
-      - electrumx-network
+      - electrumx-testnet-network
     volumes:
       - ./data/bitcoin:/home/bitcoin/.bitcoin
       - ./bitcoin.conf:/home/bitcoin/.bitcoin/bitcoin.conf
     command: bitcoind 
     restart: always
 networks:
-  electrumx-network:
+  electrumx-testnet-network:

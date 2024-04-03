@@ -43,7 +43,7 @@ RUN chmod a+x /usr/local/bin/* && \
 VOLUME ["/data"]
 ENV HOME=/data
 ENV DB_DIRECTORY=/data
-ENV SERVICES=tcp://:50001,ssl://:50002,wss://:50004,rpc://0.0.0.0:8000
+ENV SERVICES=tcp://:51001,ssl://:51002,wss://:51004,rpc://0.0.0.0:8001
 ENV SSL_CERTFILE=${DB_DIRECTORY}/server.crt
 ENV SSL_KEYFILE=${DB_DIRECTORY}/server.key
 ENV ALLOW_ROOT=true
@@ -55,6 +55,6 @@ ENV HOST=""
 
 WORKDIR /data
 
-EXPOSE 50001 50002 50004 8000
+EXPOSE 51001 51002 51004 8001
 
 CMD ["init"]
