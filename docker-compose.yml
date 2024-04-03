@@ -5,7 +5,7 @@ services:
       context: ./
     container_name: electrumx-testnet
     depends_on:
-      - bitcoind
+      - bitcoind-testnet
     image: chainbow/electrumx:${APP_VER}
     environment:
       - DAEMON_URL=bitcoin:password@bitcoind-testnet:18332
