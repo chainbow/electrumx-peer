@@ -3,7 +3,7 @@ services:
   electrumx:
     build:
       context: ./
-    container_name: electrumx
+    container_name: electrumx-testnet
     depends_on:
       - bitcoind
     image: chainbow/electrumx:${APP_VER}
@@ -23,7 +23,7 @@ services:
     restart: always
   bitcoind:
     image: 'ruimarinho/bitcoin-core:latest'
-    container_name: bitcoind
+    container_name: bitcoind-testnet
     ports:
       # change to 18333 if running testnet
       - '18333:18333'
