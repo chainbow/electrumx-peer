@@ -1,6 +1,6 @@
 version: '3'
 services:
-  electrumx:
+  electrumx-testnet:
     build:
       context: ./
     container_name: electrumx-testnet
@@ -8,7 +8,7 @@ services:
       - bitcoind
     image: chainbow/electrumx:${APP_VER}
     environment:
-      - DAEMON_URL=bitcoin:password@bitcoind:18332
+      - DAEMON_URL=bitcoin:password@bitcoind-testnet:18332
       - NET=testnet
       - COIN=Bitcoin
       - SERVICES=ssl://0.0.0.0:51002,tcp://0.0.0.0:51001
@@ -21,7 +21,7 @@ services:
     volumes:
       - ./data/electrumx:/data
     restart: always
-  bitcoind:
+  bitcoind-testnet:
     image: 'ruimarinho/bitcoin-core:latest'
     container_name: bitcoind-testnet
     ports:
