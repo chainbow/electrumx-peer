@@ -24,11 +24,11 @@ services:
   bitcoind-testnet:
     image: 'ruimarinho/bitcoin-core:latest'
     container_name: bitcoind-testnet
-    ports:
-      # change to 18333 if running testnet
-      - '18333:18333'
-      # JSON-RPC
-      - '18332:18332'
+    # ports:
+    #   # change to 18333 if running testnet
+    #   - '18333:18333'
+    #   # JSON-RPC
+    #   - '18332:18332'
     networks:
       - electrumx-testnet-network
     volumes:
