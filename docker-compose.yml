@@ -25,9 +25,9 @@ services:
   bitcoind:
     image: 'ruimarinho/bitcoin-core:latest'
     container_name: bitcoind
-    # ports:
-    #   # change to 18333 if running testnet
-    #   - '8333:8333'
+    ports:
+      # change to 18333 if running testnet
+      - '8333:8333'
     #   # JSON-RPC
     #   - '8332:8332'
     #   # ZMQ
